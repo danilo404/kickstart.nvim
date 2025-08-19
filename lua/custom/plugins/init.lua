@@ -24,7 +24,8 @@ return {
           side = 'left',
         },
         filters = {
-          dotfiles = false,
+          dotfiles = true,
+          custom = { '.git' }, -- customize to your needs
         },
         update_focused_file = {
           enable = true,
