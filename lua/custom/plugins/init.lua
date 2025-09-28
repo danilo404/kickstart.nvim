@@ -40,8 +40,11 @@ return {
           vim.keymap.set('n', 'v', api.node.open.vertical, opts)
           vim.keymap.set('n', 's', api.node.open.horizontal, opts)
         end,
+        git = {
+          ignore = false, -- show .gitignored files
+        },
       }
-
+      vim.keymap.set('n', '<leader>w', ':NvimTreeFocus<CR>', { silent = true, desc = 'Focus nvim-tree' })
       -- Optional: map <leader>e to toggle the tree
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
       vim.keymap.set('n', '<leader>l', ':NvimTreeFindFile<CR>', { desc = 'Reveal current file in nvim-tree' })
