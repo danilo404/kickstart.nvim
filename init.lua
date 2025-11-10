@@ -1037,6 +1037,8 @@ require('lazy').setup({
   },
 })
 
+vim.g.editorconfig = false
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'lua',
   callback = function()
@@ -1054,6 +1056,16 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.tabstop = 2
     vim.bo.shiftwidth = 4
     vim.bo.softtabstop = 2
+  end,
+})
+
+-- Use real tabs in Makefiles
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'make',
+  callback = function()
+    vim.bo.expandtab = false -- use real tabs
+    vim.bo.shiftwidth = 8 -- typical for Makefiles (optional)
+    vim.bo.softtabstop = 0 -- <Tab> inserts a single tab
   end,
 })
 
