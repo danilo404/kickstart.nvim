@@ -1071,5 +1071,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.keymap.set('n', '<leader>cf', [[:let @+ = expand('%:p')<CR>]], { desc = 'Copy full file path' })
 
+require('config.run').setup()
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
